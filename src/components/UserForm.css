@@ -1,0 +1,42 @@
+.form-div {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    flex-flow: column;
+    background-color: whitesmoke;
+    margin-top: 5rem;
+    width: 500px;
+    border-radius: 8px;
+}
+
+.button-div {
+    display: flex;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.user-name-input, .user-age-input {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.name-input, .age-input {
+    font-size: 20px;
+}
+
+.label, button {
+    align-self: start;
+    font-weight: bolder;
+}
+
+
+.form button {
+    background-color: rgb(163, 49, 212);
+    border-radius: 8px;
+    color: white;
+    width: 100px;
+}
