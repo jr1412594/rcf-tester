@@ -1,0 +1,40 @@
+.invalid-container {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    border-radius: 8px;
+    align-self: center;
+}
+
+.invalid-header {
+    background-color: blueviolet;
+    text-align: start;
+    color: white;
+    font-weight: bolder;
+    padding: 3px;
+}
+
+.invalid-header h3 {
+    margin-left: 10px;
+}
+
+.invalid-text {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3px;
+    /* justify-content: start;
+    align-items: center; */
+}
+
+.invalid-text p {
+    align-self: flex-start;
+    margin-left: 10px;
+}
+
+.invalid-text button {
+    align-self: flex-end;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    width: 4rem;
+}
