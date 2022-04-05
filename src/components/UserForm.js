@@ -2,8 +2,7 @@ import "./UserForm.css";
 
 import { useState } from "react";
 
-
-const UserForm = ({ addUser, ifInvalid }) => {
+const UserForm = ({ addUser, ifInvalid, cssHandling, setMessage }) => {
     const [input, setInput] = useState({
         userName: "",
         age: "",
@@ -12,20 +11,23 @@ const UserForm = ({ addUser, ifInvalid }) => {
     const handleChange = (event) => {
         setInput({ ...input, [event.target.name]: event.target.value });
     };
-    console.log(input.userName.trim().length, " :this is the length")
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(input.userName.trim().length === 0 || input.age < 0) {
+        if (input.userName.trim().length === 0) {
             ifInvalid(false);
+            setMessage("Enter a valid name");
+        } else if (input.age < 0 || input.age.trim() === "") {
+            ifInvalid(false);
+            setMessage("Enter a valid age");
         } else {
-            addUser({ ...input, id: Math.random().toString()});
+            addUser({ ...input, id: Math.random().toString() });
             setInput({ userName: "", age: "" });
         }
     };
 
     return (
-        <div className="form-div">
+        <div className={"form-div" + cssHandling}>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="user-name-input">
                     <label className="label" htmlFor="name-input">

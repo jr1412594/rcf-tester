@@ -3,6 +3,12 @@
     display: flex;
     justify-content: center;
 }
+.form-div-invalid {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    filter: brightness(50%);
+}
 
 .form {
     flex-flow: column;

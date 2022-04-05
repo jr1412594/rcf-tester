@@ -9,3 +9,16 @@
     padding: 3px;
     justify-content: space-around;
 }
+.container-invalid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    width: 500px;
+    background-color: whitesmoke;
+    align-self: center;
+    border-radius: 8px;
+    padding: 3px;
+    justify-content: space-around;
+    filter: brightness(50%);
+    z-index: 0;
+}

@@ -8,6 +8,7 @@ import Invalid from "./components/Invalid";
 function App() {
     const [userInfo, setUserInfo] = useState([]);
     const [isValid, setIsValid] = useState(true);
+    const [message, setMessage] = useState("");
 
     const addUser = (userInput) => {
         setUserInfo((prevState) => {
@@ -17,24 +18,38 @@ function App() {
 
     const ifInvalid = (falseVariable) => {
         setIsValid(falseVariable);
+        setMessage("error");
     };
 
     const confirmInvalid = () => {
         setIsValid(true);
     };
 
+    const cssHandling = isValid ? "" : "-invalid";
+
     const showUsers =
         userInfo.length > 0 ? (
-            <UserContainer userInfo={userInfo} addUser={addUser} />
+            <UserContainer
+                userInfo={userInfo}
+                addUser={addUser}
+                cssHandling={cssHandling}
+            />
         ) : (
             ""
         );
 
-    const alerting = !isValid && <Invalid confirmInvalid={confirmInvalid} />;
+    const alerting = !isValid && (
+        <Invalid confirmInvalid={confirmInvalid} message={message} />
+    );
 
     return (
-        <div className="App">
-            <UserForm addUser={addUser} ifInvalid={ifInvalid} />
+        <div className="App" onClick={confirmInvalid}>
+            <UserForm
+                addUser={addUser}
+                ifInvalid={ifInvalid}
+                cssHandling={cssHandling}
+                setMessage={setMessage}
+            />
             {alerting}
             {showUsers}
         </div>
